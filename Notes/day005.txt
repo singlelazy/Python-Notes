@@ -43,3 +43,27 @@
 			q：		退出(不保存)
 			wq!：	强制存盘退出
 			set nu	显示行号
+3.系统的初始化与服务
+	1.启动顺序
+		BIOS->MBR->Kernel->init
+		MBR 512B
+			446 引导信息
+			64	分区信息
+			2	标志位
+		cat /etc/redhat-release 查看操作系统信息
+		uname -r 查看内核版本
+		uname -a 查看内核详细信息
+		runlevel 查看启动级别
+		init 0-6
+			0	关机
+			1	单用户模式，只有root用户能登陆，用于系统维护
+			2	多用户模式，但是没有网络功能
+			3	多用户模式，有网络功能，但是没有图形界面
+			4	用户自定义模式，默认与3相同
+			5	与3相同，但是有图形界面
+			6	重新启动系统
+	2.GRUB程序和grub.conf文件
+		GRUB的定义：GRUB是Grand Unified Bootloader（多重操作系统启动管理器）
+		grub-md5-crypt grub加密 
+		bios 加密 bios里面security
+4.操作系统进程管理
